@@ -12,7 +12,7 @@ It uses `~/.ssh/config` to list and connect to hosts.
 [![example](https://i.imgur.com/iPmiEVU.gif)](https://asciinema.org/a/465800)
 
 # Requirements
-You need to have `ssh` installed and accessible from your terminal.
+You need to have `ssh` and `sshpass` installed and accessible from your terminal.
 
 # How to install
 ## Homebrew
@@ -51,11 +51,14 @@ nix profile install 'github:quantumsheep/sshs'
 Releases contains prebuilt binaries for Linux, macOS and Windows. You can download them at https://github.com/quantumsheep/sshs/releases.
 
 ## From sources
+Install golang : https://go.dev/doc/install
+
+Then
 ```bash
-git clone https://github.com/quantumsheep/sshs.git
+git clone --branch sshpass https://github.com/gremi64/sshs.git
 cd sshs
 make
-make install
+sudo make install
 ```
 
 # Troubleshooting
