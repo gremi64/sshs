@@ -57,7 +57,11 @@ func init() {
 }
 
 func connect(name string, configPath string) {
-	cmd := exec.Command("ssh", "-F", configPath, strings.TrimSpace(name))
+	dirname, err1 := os.UserHomeDir()
+	if err1 != nil {
+		os.Exit(1)
+	}
+	cmd := exec.Command("sshpass", "-f", dirname + "/.sshpassfile", "ssh", "-F", configPath, strings.TrimSpace(name))
 	cmd.Stdin = os.Stdin
 	cmd.Stdout = os.Stdout
 	cmd.Stderr = os.Stderr
