@@ -15,41 +15,6 @@ It uses `~/.ssh/config` to list and connect to hosts.
 You need to have `ssh` and `sshpass` installed and accessible from your terminal.
 
 # How to install
-## Homebrew
-```shell
-brew install sshs
-```
-
-## Chocolatey
-Thanks to [Jakub Levý](https://github.com/jakublevy/chocopkgs/tree/master/sshs) for maintaining this package on Chocolatey.
-```shell
-choco install sshs
-```
-
-## Arch Linux
-### Pacman
-[Vote for the package to be added to the official repository](https://aur.archlinux.org/packages/sshs).  
-In the meantime you can manually install it by cloning the repository and running `makepkg`:
-```shell
-pacman -S --needed git base-devel
-git clone https://aur.archlinux.org/sshs.git
-cd sshs
-makepkg -si
-```
-
-### Yay
-```shell
-yay -Syua --needed --noconfirm sshs
-```
-
-## NixOS / Nix (with flakes enabled)
-```shell
-nix profile install 'github:quantumsheep/sshs'
-```
-
-## From releases
-Releases contains prebuilt binaries for Linux, macOS and Windows. You can download them at https://github.com/quantumsheep/sshs/releases.
-
 ## From sources
 Install golang : https://go.dev/doc/install
 
@@ -59,6 +24,11 @@ git clone --branch sshpass https://github.com/gremi64/sshs.git
 cd sshs
 make
 sudo make install
+```
+
+Create `.sshpassfile`, type your password, end with `Ctrl+C`
+```bash
+cat - > ~/.sshpassfile
 ```
 
 # Troubleshooting
